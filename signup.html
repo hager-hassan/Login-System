@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+
+    <!-- *google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+
+    <!-- *font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- *style sheets -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <main class="main w-100 min-vh-100 d-flex align-items-center justify-content-center">
+        <section class="container form-container p-5">
+            <div>
+                <h1 class="text-center mb-2 fw-bold">
+                    Smart Login System
+                </h1>
+                <form class="d-flex flex-column">
+                    <div class="d-flex align-items-center input-container position-relative">
+                        <i class="fa-solid fa-user text-white position-absolute"></i>
+                        <input type="text" class="d-block" id="userName" placeholder="Enter your name">
+                    </div>
+                    <p class="error-message d-none" id="nameErrorMessage">! The username must be between 3 and 15 characters long and can contain up to 5 names</p>
+                    <div class="d-flex align-items-center input-container position-relative">
+                        <i class="fa-solid fa-envelope text-white position-absolute"></i>
+                        <input type="email" class="d-block" id="email" placeholder="Enter your email">
+                    </div>
+                    <p class="error-message d-block d-none" id="emailErrorMessage">! The email must be valid</p>
+                    <div class="d-flex align-items-center input-container position-relative">
+                        <i class="fa-solid fa-lock text-white position-absolute"></i>
+                        <input type="password" class="d-block" id="password" placeholder="Enter your password">
+                        <i class="fa-solid fa-eye-slash position-absolute text-white" id="hiddenIcon"></i>
+                        <i class="fa-solid fa-eye d-none position-absolute text-white" id="visibleIcon"></i>
+                    </div>
+                    <p class="error-message d-none" id="passwordErrorMessage">! Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character</p>
+                    <button class="my-btn" id="signupButton">Sign Up</button>
+                </form>
+                <p class="text-center text-white">You have an account? <a href="index.html">Sign In</a> </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- *for sweetAlter2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- *my JS file -->
+    <script src="js/main.js"></script>
+</body>
+</html>

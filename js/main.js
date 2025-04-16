@@ -13,6 +13,7 @@ let logoutButton = document.getElementById('logoutButton');
 let welcomeMessage = document.getElementById('welcomeMessage');
 
 let errorFlag = false;
+let numOfErrors =0;
 let currentName;
 
 const Regex = {
@@ -117,11 +118,13 @@ function regexValidation(field){
 
     if(regex.test(value)){
         errorMessages[field.id].classList.add('d-none');
+        errorFlag = false;
         return true;
     }
     else{
         errorMessages[field.id].classList.remove('d-none');
         errorFlag = true;
+        numOfErrors +=1;
         return false;
     }
 }
@@ -161,11 +164,14 @@ if (signupButton){
             errorAlter("Fields can't be empty!");
             return;
         }
+
+        // Reset error count before starting validation
+        numOfErrors = 0;
     
         regexValidation(userName);
         regexValidation(email);
         regexValidation(password);
-        if(errorFlag){
+        if(errorFlag || numOfErrors != 0){
             return;
         }
     
